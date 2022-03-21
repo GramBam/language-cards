@@ -3,6 +3,7 @@ export const translations = [
   { english: 'You', mandarin: 'Ni' },
   { english: 'Him/Her', mandarin: 'Ta' },
   { english: 'We/Us', mandarin: 'Wuh men' },
-  { english: 'You people', mandarin: 'Ni men' },
+  { english: 'You (Multiple people)', mandarin: 'Ni men' },
   { english: 'They', mandarin: 'Ta Men' },
+  { english: 'Ours', mandarin: 'Wuh men duh' },
 ]

@@ -38,3 +38,19 @@ code {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+
+.visible {
+  transition: opacity 0.75s ease;
+}
+.hidden {
+  opacity: 0;
+  transition: opacity 0.75s ease;
+}
+
+.enabled {
+  pointer-events: all;
+}
+
+.disabled {
+  pointer-events: none;
+}
