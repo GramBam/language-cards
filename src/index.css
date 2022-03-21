@@ -30,10 +30,9 @@ code {
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
-  padding: 8px 20px;
+  padding: 5px 15px;
   border: none;
   margin: 5px;
-  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
   color: #fff;
 }
 
@@ -71,4 +70,32 @@ code {
   opacity: 0;
   transition: opacity 0.75s ease;
   pointer-events: none;
+}
+
+.tooltip {
+  margin: 5px
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 1;
+  padding: 10px 25px;
+  max-width: 15%
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

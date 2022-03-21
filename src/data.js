@@ -9,7 +9,7 @@ export const translations = [
   { english: 'How is your day', mandarin: 'Jin Tian Goah De Hao Ma' },
   { english: 'Hello', mandarin: 'Nǐ hǎo', characters: '你好' },
   { english: 'One', mandarin: 'Yī', characters: '一' },
-  { english: 'Two', mandarin: 'Èr', characters: '二' },
+  { english: 'Two', mandarin: 'Èr / Leeung', characters: '二', info: 'Use Er as "second" (The second month), use Leeung as "Two" (Two Months Until...)' },
   { english: 'Three', mandarin: 'Sān', characters: '三' },
   { english: 'Four', mandarin: 'Sì', characters: '四' },
   { english: 'Five', mandarin: 'Wǔ', characters: '五' },

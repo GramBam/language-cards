@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
-import { FaCheck, FaTimes } from 'react-icons/fa'
+import { FaCheck, FaTimes, FaInfoCircle } from 'react-icons/fa'
+import { MdTranslate } from 'react-icons/md'
 
-function Card({ translation }) {
-  const { english, mandarin, characters } = translation
+function Card({ translation, color }) {
+  const { english, mandarin, characters, info } = translation
 
   const [text, setText] = useState(english)
   const [textVisible, setTextVisible] = useState('visible')
@@ -21,21 +22,35 @@ function Card({ translation }) {
     setButtonVisible('visible')
   }
 
-  const onClick = () => {
+  const onCardClick = () => {
     if (clickable) {
       fade()
     }
   }
+  const onButtonClick = (e) => {
+    console.log(e)
+  }
 
   return (
-    <div className='card-container' onClick={onClick}>
-      <div className='card' >
-        <p className={'card-text ' + textVisible} >{text}</p>
-        {characters ? <p className={'card-text characters ' + textVisible}>{text === english ? '' : characters}</p> : null}
-        <button className={'card-button check ' + buttonVisible}><FaCheck /></button>
-        <button className={'card-button cross ' + buttonVisible}><FaTimes /></button>
-      </div>
+    <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color }}>
+      {
+        info && text === mandarin &&
+        <div className="tooltip left">
+          <p className='tooltiptext'>{info}</p>
+          <FaInfoCircle />
+        </div>
+      }
+      {
+        characters && text === mandarin &&
+        <div className='tooltip right'>
+          <p className='tooltiptext'>{characters}</p>
+          <MdTranslate />
+        </div>
+      }
 
+      <p className={'card-text ' + textVisible} >{text}</p>
+      <button className={'card-button check ' + buttonVisible} onClick={onButtonClick} ><FaCheck /></button>
+      <button className={'card-button cross ' + buttonVisible} onClick={onButtonClick} ><FaTimes /></button>
     </div>
 
   )
