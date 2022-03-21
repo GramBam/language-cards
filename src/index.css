@@ -13,24 +13,49 @@ code {
     monospace;
 }
 
-.card {
-  border-radius: 10px; /* 5px rounded corners */
+.card-container {
+  border-radius: 10px;
   background-color: #ffffff;
   text-align: center;
   display: inline-block;
-  line-height: 180px;
-  flex-basis: 30%;
-  margin: 20px;
+  flex-basis: 25%;
+  margin: 15px;
   cursor: pointer;
+}
 
+.card-button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 20px;
+  border: none;
+  margin: 5px;
+  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
+  color: #fff;
+}
+
+.cross {
+  background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+}
+.check{
+  background: #21E065;
 }
 
 .card-text {
-  display: inline-block;
   vertical-align: middle;
   line-height: normal;
   font-size: 32px;
   font-weight: bolder;
+  margin: 5px
+}
+
+.characters {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -45,12 +70,5 @@ code {
 .hidden {
   opacity: 0;
   transition: opacity 0.75s ease;
-}
-
-.enabled {
-  pointer-events: all;
-}
-
-.disabled {
   pointer-events: none;
 }
