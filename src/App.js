@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Button from "./components/Button";
 import CardList from "./components/CardList";
 import Footer from "./components/Footer";
