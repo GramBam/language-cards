@@ -19,7 +19,7 @@ function CardList() {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <label htmlFor="lang" style={{ color: '#FFF', fontSize: '24px' }}>Start In Mandarin</label>
+      <label htmlFor="lang" style={{ color: '#FFF', fontSize: '24px' }}>Start in Mandarin</label>
       <input type="checkbox" id="lang" onChange={onChange} />
       <div className="cards">
         {loadCards()}
