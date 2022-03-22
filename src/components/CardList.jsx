@@ -7,7 +7,7 @@ function CardList() {
 
   return (
     <div className="container">
-      {[...Array(randomOrder.length)].map((_, i) => <Card key={i} color={colors[Math.floor(Math.random() * colors.length)]} translation={randomOrder[i]} />)}
+      {[...Array(randomOrder.length)].map((_, i) => <Card key={i} color={colors[i % colors.length]} translation={randomOrder[i]} />)}
     </div>
   )
 }

@@ -33,24 +33,30 @@ function Card({ translation, color }) {
 
   return (
     <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color }}>
-      {
+      {/* {
         info && text === mandarin &&
         <div className="tooltip left">
-          <p className='tooltiptext'>{info}</p>
           <FaInfoCircle />
+          <p className='tooltiptext'>{info}</p>
         </div>
       }
       {
         characters && text === mandarin &&
         <div className='tooltip right'>
-          <p className='tooltiptext'>{characters}</p>
           <MdTranslate />
+          <p className='tooltiptext'>{characters}</p>
         </div>
-      }
+      } */}
 
-      <p className={'card-text ' + textVisible} >{text}</p>
-      <button className={'card-button check ' + buttonVisible} onClick={onButtonClick} ><FaCheck /></button>
-      <button className={'card-button cross ' + buttonVisible} onClick={onButtonClick} ><FaTimes /></button>
+      <div>
+        <p className={'card-text ' + textVisible} >{text}</p>
+        {/* <button className={'card-button check ' + buttonVisible} onClick={onButtonClick} ><FaCheck /></button>
+        <button className={'card-button cross ' + buttonVisible} onClick={onButtonClick} ><FaTimes /></button> */}
+        {
+          text === mandarin &&
+          <p className={'card-text ' + textVisible}>{characters}</p>
+        }
+      </div>
     </div>
 
   )

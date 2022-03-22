@@ -1,3 +1,7 @@
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -6,6 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #333;
+  display: flex;
+  flex-direction: column;
 }
 
 code {
@@ -17,10 +23,10 @@ code {
   border-radius: 10px;
   background-color: #ffffff;
   text-align: center;
-  display: inline-block;
   flex-basis: 25%;
   margin: 15px;
   cursor: pointer;
+  height: 7em;
 }
 
 .card-button {
@@ -35,6 +41,10 @@ code {
   margin: 5px;
   color: #fff;
 }
+
+/* .card-button:hover {
+  border: 1px solid #333;
+} */
 
 .cross {
   background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
@@ -73,29 +83,67 @@ code {
 }
 
 .tooltip {
-  margin: 5px
-}
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
+  position: relative;
+  display: inline-block;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  background-color: #000;
+  width: 120px;
+  background-color: black;
   color: #fff;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 6px;
+  padding: 5px 0;
   position: absolute;
   z-index: 1;
-  padding: 10px 25px;
-  max-width: 15%
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+footer {
+  text-align: center;
+  background-color: azure;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  font-weight: bolder;
+}
+
+nav {
+  text-align: center;
+  background-color: #FFF;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+nav p {
+  font-size: 32px;
+  font-weight: bolder;
+  font-family: cursive;
+  margin: 10px;
 }

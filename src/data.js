@@ -6,7 +6,7 @@ export const translations = [
   { english: 'You (Multiple people)', mandarin: 'Ni men' },
   { english: 'They', mandarin: 'Ta Men' },
   { english: 'Ours', mandarin: 'Wuh men de' },
-  { english: 'How is your day', mandarin: 'Jin Tian Goah De Hao Ma' },
+  { english: 'How is your day', mandarin: 'Nǐ jīntiānguò dé zěnyàng', characters: '你今天过得怎样' },
   { english: 'Hello', mandarin: 'Nǐ hǎo', characters: '你好' },
   { english: 'One', mandarin: 'Yī', characters: '一' },
   { english: 'Two', mandarin: 'Èr / Leeung', characters: '二', info: 'Use Er as "second" (The second month), use Leeung as "Two" (Two Months Until...)' },
