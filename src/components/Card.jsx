@@ -2,13 +2,18 @@ import { useState, useEffect } from 'react'
 import { FaCheck, FaTimes, FaInfoCircle } from 'react-icons/fa'
 import { MdTranslate } from 'react-icons/md'
 
-function Card({ translation, color }) {
+function Card({ translation, color, checked }) {
   const { english, mandarin, characters, info } = translation
 
-  const [text, setText] = useState(english)
+  const [text, setText] = useState(checked ? mandarin : english)
   const [textVisible, setTextVisible] = useState('visible')
   const [buttonVisible, setButtonVisible] = useState('hidden')
   const [clickable, setClickable] = useState(true)
+
+  useEffect(() => {
+    setText(checked ? mandarin : english)
+  }, [checked])
+
 
   const fade = () => {
     setClickable(false)
@@ -17,7 +22,7 @@ function Card({ translation, color }) {
   }
 
   const fadeIn = () => {
-    setText(mandarin)
+    setText(checked ? english : mandarin)
     setTextVisible('visible')
     setButtonVisible('visible')
   }
