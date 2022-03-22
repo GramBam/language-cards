@@ -1,18 +1,16 @@
 import { useState, useEffect } from 'react'
-import { FaCheck, FaTimes, FaInfoCircle } from 'react-icons/fa'
-import { MdTranslate } from 'react-icons/md'
 
 function Card({ translation, color, checked }) {
-  const { english, mandarin, characters, info } = translation
+  const { english, mandarin, characters } = translation
 
   const [text, setText] = useState(checked ? mandarin : english)
   const [textVisible, setTextVisible] = useState('visible')
-  const [buttonVisible, setButtonVisible] = useState('hidden')
+  // const [buttonVisible, setButtonVisible] = useState('hidden')
   const [clickable, setClickable] = useState(true)
 
   useEffect(() => {
     setText(checked ? mandarin : english)
-  }, [checked])
+  }, [checked, english, mandarin])
 
 
   const fade = () => {
@@ -24,7 +22,7 @@ function Card({ translation, color, checked }) {
   const fadeIn = () => {
     setText(checked ? english : mandarin)
     setTextVisible('visible')
-    setButtonVisible('visible')
+    // setButtonVisible('visible')
   }
 
   const onCardClick = () => {
@@ -32,9 +30,9 @@ function Card({ translation, color, checked }) {
       fade()
     }
   }
-  const onButtonClick = (e) => {
-    console.log(e)
-  }
+  // const onButtonClick = (e) => {
+  //   console.log(e)
+  // }
 
   return (
     <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color }}>
