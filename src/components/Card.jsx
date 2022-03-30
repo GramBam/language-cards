@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react'
 
-function Card({ translation, color, checked }) {
+function Card({ translation, color, language }) {
   const { english, mandarin, characters } = translation
 
-  const [text, setText] = useState(checked ? mandarin : english)
+  const [text, setText] = useState(language === 'man' ? mandarin : english)
   const [textVisible, setTextVisible] = useState('visible')
   // const [buttonVisible, setButtonVisible] = useState('hidden')
   const [clickable, setClickable] = useState(true)
 
   useEffect(() => {
-    setText(checked ? mandarin : english)
-  }, [checked, english, mandarin])
+    setText(language === 'man' ? mandarin : english)
+    setClickable(true)
+  }, [language, english, mandarin])
 
 
   const fade = () => {
@@ -20,7 +21,7 @@ function Card({ translation, color, checked }) {
   }
 
   const fadeIn = () => {
-    setText(checked ? english : mandarin)
+    setText(language === 'man' ? english : mandarin)
     setTextVisible('visible')
     // setButtonVisible('visible')
   }
@@ -30,31 +31,12 @@ function Card({ translation, color, checked }) {
       fade()
     }
   }
-  // const onButtonClick = (e) => {
-  //   console.log(e)
-  // }
 
   return (
     <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color }}>
-      {/* {
-        info && text === mandarin &&
-        <div className="tooltip left">
-          <FaInfoCircle />
-          <p className='tooltiptext'>{info}</p>
-        </div>
-      }
-      {
-        characters && text === mandarin &&
-        <div className='tooltip right'>
-          <MdTranslate />
-          <p className='tooltiptext'>{characters}</p>
-        </div>
-      } */}
 
       <div>
         <p className={'card-text ' + textVisible} >{text}</p>
-        {/* <button className={'card-button check ' + buttonVisible} onClick={onButtonClick} ><FaCheck /></button>
-        <button className={'card-button cross ' + buttonVisible} onClick={onButtonClick} ><FaTimes /></button> */}
         {
           text === mandarin &&
           <p className={'card-text ' + textVisible}>{characters}</p>

@@ -19,14 +19,33 @@ code {
     monospace;
 }
 
+.main {
+  min-height: 88vh;
+}
+
 .card-container {
   border-radius: 10px;
-  background-color: #ffffff;
   text-align: center;
   flex-basis: 25%;
   margin: 15px;
   cursor: pointer;
-  height: 7em;
+  min-height: 3.25em;
+  font-size: 1.75rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-container {
+    flex-basis: 40%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-container {
+    flex-basis: 50%;
+  }
+  .card-text {
+    font-size: 1.5rem;
+  }
 }
 
 .card-button {
@@ -56,7 +75,6 @@ code {
 .card-text {
   vertical-align: middle;
   line-height: normal;
-  font-size: 32px;
   font-weight: bolder;
   margin: 5px
 }
@@ -120,15 +138,14 @@ code {
 footer {
   text-align: center;
   background-color: azure;
-  position: fixed;
-  left: 0;
   bottom: 0;
   width: 100%;
+  height: 2.5rem;
 }
 
 footer p {
-  font-size: 16px;
-  margin: 10px 0 0 0;
+  font-size: 14px;
+  margin: 0;
   padding: 10px;
   font-weight: bolder;
 }
@@ -137,78 +154,32 @@ nav {
   text-align: center;
   background-color: deepskyblue;
   color: #FFF;
-  margin-bottom: 25px;
-  display: flex;
-  flex-direction: column;
+  padding: 5px;
+  margin-bottom: 10px;;
 }
 
 nav p {
   font-size: 32px;
   font-weight: bolder;
   font-family: cursive;
-  margin: 10px;
+  margin: 5px;
 }
 
-/* The container */
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.options {
+  color: #FFF;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 
-/* Hide the browser's default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
+.options div {
+  margin: 5px 10px;
 }
 
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the radio button is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .checkmark:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
+.catagories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
