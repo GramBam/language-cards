@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <p>
-        Made with <FaHeart style={{ color: 'red' }} /> By Graham Moss
+        Made with <FaHeart style={{ color: 'red' }} /> By <a href='https://github.com/grambam' target='_blank'>Graham Moss</a>
       </p>
     </footer>
   )

@@ -34,13 +34,11 @@ function Card({ translation, color, language }) {
 
   return (
     <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color, cursor: clickable ? 'pointer' : 'default' }}>
-      <div>
-        <p className={'card-text ' + textVisible} >{text}</p>
-        {
-          text === mandarin &&
-          <p className={'card-text ' + textVisible}>{characters}</p>
-        }
-      </div>
+      <p className={'card-text ' + textVisible} >{text}</p>
+      {
+        text === mandarin &&
+        <p className={'card-text ' + textVisible}>{characters}</p>
+      }
     </div>
 
   )

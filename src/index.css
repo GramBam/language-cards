@@ -163,14 +163,22 @@ nav p {
   justify-content: center;
 }
 
-.options div {
-  margin: 5px 10px;
-}
-
-.catagories {
+.categories {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-flow: wrap;
+  padding: 0;
+  margin: 15px 50px;
+  text-align: center;
+}
+
+.category {
+  flex-basis: 20%;
+}
+
+.category label {
+  margin-right: 10px;
+  min-width: 10px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -184,6 +192,16 @@ nav p {
   }
 }
 
+@media screen and (max-width: 815px) {
+  .category {
+    flex-basis: 40%;
+  }
+
+  .categories {
+    text-align: end;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .card-container {
     flex-basis: 50%;
@@ -194,6 +212,10 @@ nav p {
   }
 
   .options {
-    font-size: 0.80rem;
+    font-size: 0.85rem;
+  }
+
+  nav p {
+    font-size: 22px;
   }
 }

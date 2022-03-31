@@ -47,12 +47,29 @@ export const translations =
     { english: 'Onion', mandarin: 'Yángcōng', characters: '洋葱' },
     { english: 'Water', mandarin: 'Shuǐ', characters: '水' },
   ],
-  other: [
-    { english: 'Umbrella', mandarin: 'Yǔsǎn', characters: '雨伞' },
-    { english: 'Socks', mandarin: 'Wàzi', characters: '袜子' },
+  shapes: [
+    { english: 'Shapes', mandarin: 'Xíngzhuàng', characters: '形狀' },
+    { english: 'Circle', mandarin: 'Yuán xíng', characters: '圓圈' },
+    { english: 'Rectangle', mandarin: 'Chángfāng xíng', characters: '長方形' },
+    { english: 'Square', mandarin: 'Zhèngfāng xíng', characters: '正方形' },
+    { english: 'Triangle', mandarin: 'Sānjiǎo xíng', characters: '三角形' },
+  ],
+  instruments: [
+    { english: 'Instruments', mandarin: 'Yíqì', characters: '儀器' },
     { english: 'Guitar', mandarin: 'Jítā', characters: '吉他' },
-    { english: 'Truck', mandarin: 'Kǎchē', characters: '卡车' },
-    { english: 'Chair', mandarin: 'Yǐzi', characters: '椅子' },
+    { english: 'Piano', mandarin: 'Gāngqín', characters: '鋼琴' },
+    { english: 'Drum', mandarin: 'Gǔ', characters: '鼓' },
+  ],
+  transport: [
+    { english: 'Car', mandarin: 'Chē', characters: '車' },
+    { english: 'Truck', mandarin: 'Kǎchē', characters: '卡車' },
+    { english: 'Bicycle', mandarin: 'Zìxíngchē', characters: '自行車' },
+    { english: 'Bus', mandarin: 'Gōngchē', characters: '卡车' },
+    { english: 'Train', mandarin: 'Huǒchē', characters: '火車' },
+    { english: 'Airplane', mandarin: 'Fēijī', characters: '飛機' },
+
+  ],
+  pronouns: [
     { english: 'Me/I', mandarin: 'Wǒ', characters: '我' },
     { english: 'You', mandarin: 'Nǐ', characters: '你' },
     { english: 'Him/Her', mandarin: 'Tā', characters: '他' },
@@ -60,5 +77,10 @@ export const translations =
     { english: 'You (Multiple people)', mandarin: 'Nǐmen', characters: '你们' },
     { english: 'They', mandarin: 'Tāmen', characters: '他们' },
     { english: 'Ours', mandarin: 'Wǒmen de', characters: '我们的' },
+  ],
+  other: [
+    { english: 'Umbrella', mandarin: 'Yǔsǎn', characters: '雨伞' },
+    { english: 'Socks', mandarin: 'Wàzi', characters: '袜子' },
+    { english: 'Chair', mandarin: 'Yǐzi', characters: '椅子' },
   ]
 }
