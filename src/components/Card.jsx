@@ -33,8 +33,7 @@ function Card({ translation, color, language }) {
   }
 
   return (
-    <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color }}>
-
+    <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color, cursor: clickable ? 'pointer' : 'default' }}>
       <div>
         <p className={'card-text ' + textVisible} >{text}</p>
         {
