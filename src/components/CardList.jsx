@@ -7,11 +7,22 @@ function CardList() {
   const colors = ['#f9ceee', '#e0cdff', '#c1f0fb', '#dcf9a8', '#ffebaf']
   const categories = ['numbers', 'animals', 'conversation', 'food', 'colors', 'shapes', 'instruments', 'transport', 'pronouns', 'other',]
 
-  const [language, setLanguage] = useState('eng')
+  const [startLanguage, setStartLanguage] = useState('english')
   const [options, setOptions] = useState({ numbers: false, animals: false, conversation: false, food: false, colors: false, other: true })
 
+  const synth = window.speechSynthesis;
+  const englishVoice = synth.getVoices().find(voice => voice.name.includes('Linda'))
+  const mandarinVoice = synth.getVoices().find(voice => voice.lang === 'zh-TW')
+
+  const textToSpeech = (content) => {
+    let utterance = new SpeechSynthesisUtterance(startLanguage === 'mandarin' ? content.english : content.characters)
+    utterance.lang = startLanguage === 'mandarin' ? 'en-CA' : 'zh-TW'
+    utterance.voice = startLanguage === 'mandarin' ? englishVoice : mandarinVoice
+    synth.speak(utterance)
+  }
+
   const langChange = (e) => {
-    setLanguage(e.target.checked ? 'man' : 'eng')
+    setStartLanguage(e.target.checked ? 'mandarin' : 'english')
   }
 
   const updateCategories = (e) => {
@@ -19,7 +30,7 @@ function CardList() {
     loadCards()
   }
 
-  const getcategories = () => {
+  const getCategories = () => {
     let cardsIncluded = []
     for (let i = 0; i < categories.length; i++) {
       let c = categories[i]
@@ -31,9 +42,11 @@ function CardList() {
   }
 
   const loadCards = () => {
-    let randomOrder = getcategories().sort(() => 0.5 - Math.random())
+    let randomOrder = getCategories().sort(() => 0.5 - Math.random())
 
-    return [...Array(randomOrder.length)].map((_, i) => <Card key={i} language={language} color={colors[i % colors.length]} translation={randomOrder[i]} />)
+    return [...Array(randomOrder.length)].map((_, i) =>
+      <Card key={i} startLanguage={startLanguage} color={colors[i % colors.length]} translation={randomOrder[i]} speechCallback={textToSpeech} />
+    )
   }
 
   return (

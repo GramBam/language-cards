@@ -1,17 +1,16 @@
 import { useState, useEffect } from 'react'
 
-function Card({ translation, color, language }) {
+function Card({ translation, color, startLanguage, speechCallback }) {
   const { english, mandarin, characters } = translation
 
-  const [text, setText] = useState(language === 'man' ? mandarin : english)
+  const [text, setText] = useState(startLanguage === 'mandarin' ? mandarin : english)
   const [textVisible, setTextVisible] = useState('visible')
-  // const [buttonVisible, setButtonVisible] = useState('hidden')
   const [clickable, setClickable] = useState(true)
 
   useEffect(() => {
-    setText(language === 'man' ? mandarin : english)
+    setText(startLanguage === 'mandarin' ? mandarin : english)
     setClickable(true)
-  }, [language, english, mandarin])
+  }, [startLanguage, english, mandarin])
 
 
   const fade = () => {
@@ -21,9 +20,9 @@ function Card({ translation, color, language }) {
   }
 
   const fadeIn = () => {
-    setText(language === 'man' ? english : mandarin)
+    setText(startLanguage === 'mandarin' ? english : mandarin)
     setTextVisible('visible')
-    // setButtonVisible('visible')
+    speechCallback(translation)
   }
 
   const onCardClick = () => {
