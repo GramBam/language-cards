@@ -1,8 +1,22 @@
 export const translations =
 {
-  greetings: [
-    { english: "How's your day going", mandarin: 'Nǐ jīntiānguò dé zěnyàng', characters: '你今天过得怎样' },
+  conversation: [
     { english: 'Hello', mandarin: 'Nǐ hǎo', characters: '你好' },
+    { english: 'How are you', mandarin: 'Nǐ hǎo ma', characters: '你好嗎' },
+    { english: "I'm good", mandarin: 'Wǒ hěn hǎo', characters: '我很好' },
+    { english: "I'm not good", mandarin: 'Wǒ bù hǎo', characters: '我不好' },
+    { english: "How's your day going", mandarin: 'Nǐ jīntiānguò dé hǎo ma', characters: '你今天过得好嗎' },
+    { english: "Not bad", mandarin: 'Hái hǎo', characters: '還好' },
+    { english: "What are you doing", mandarin: 'Nǐ zài gànshénme', characters: '你在幹什麼' },
+    { english: "How is [Name] Doing", mandarin: '[Name] hǎo ma', characters: '_好嗎' },
+    { english: "Good Morning", mandarin: 'Zǎo ān', characters: '早安' },
+    { english: "Good Night", mandarin: 'Wǎn ān', characters: '晚安' },
+    { english: "What is your name", mandarin: 'Nǐ jiào shénme míngzì', characters: '你叫什麼名字' },
+    { english: "My Name is ___", mandarin: 'Wǒ de míngzì shì ___', characters: '我的名字是' },
+    { english: "Happy to meet you", mandarin: 'Hěn gāoxìng jiàn dào nǐ', characters: '很高興見到你' },
+    { english: "I'm learning Chinese", mandarin: 'Wǒ zài xué zhōngwén', characters: '我在學中文' },
+    { english: "I Want", mandarin: 'Wǒ yào', characters: '我要' },
+    { english: "Excuse me", mandarin: 'Bù hǎo yìsi', characters: '不好意思' },
   ],
   numbers: [
     { english: 'Numbers', mandarin: 'Shùzì', characters: '數字' },
@@ -77,6 +91,7 @@ export const translations =
     { english: 'You (Multiple people)', mandarin: 'Nǐmen', characters: '你们' },
     { english: 'They', mandarin: 'Tāmen', characters: '他们' },
     { english: 'Ours', mandarin: 'Wǒmen de', characters: '我们的' },
+    { english: 'Yours', mandarin: 'Nǐ de', characters: '你的' },
   ],
   other: [
     { english: 'Umbrella', mandarin: 'Yǔsǎn', characters: '雨伞' },

@@ -5,10 +5,10 @@ import CategoryPick from "./CategoryPick";
 
 function CardList() {
   const colors = ['#f9ceee', '#e0cdff', '#c1f0fb', '#dcf9a8', '#ffebaf']
-  const categories = ['numbers', 'animals', 'greetings', 'food', 'colors', 'shapes', 'instruments', 'transport', 'pronouns', 'other',]
+  const categories = ['numbers', 'animals', 'conversation', 'food', 'colors', 'shapes', 'instruments', 'transport', 'pronouns', 'other',]
 
   const [language, setLanguage] = useState('eng')
-  const [options, setOptions] = useState({ numbers: false, animals: false, greetings: false, food: false, colors: false, other: true })
+  const [options, setOptions] = useState({ numbers: false, animals: false, conversation: false, food: false, colors: false, other: true })
 
   const langChange = (e) => {
     setLanguage(e.target.checked ? 'man' : 'eng')
