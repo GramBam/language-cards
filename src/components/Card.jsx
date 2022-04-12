@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { MdOutlineRecordVoiceOver } from 'react-icons/md'
 
 function Card({ translation, color, startLanguage, speechCallback }) {
   const { english, mandarin, characters } = translation
@@ -33,11 +34,15 @@ function Card({ translation, color, startLanguage, speechCallback }) {
 
   return (
     <div className='card-container' onClick={onCardClick} style={{ backgroundColor: color, cursor: clickable ? 'pointer' : 'default' }}>
-      <p className={'card-text ' + textVisible} >{text}</p>
       {
-        text === mandarin &&
-        <p className={'card-text ' + textVisible}>{characters}</p>
+        !clickable &&
+        <div className={'speechIcon ' + textVisible} onClick={() => speechCallback(translation)}>
+          <MdOutlineRecordVoiceOver style={{ height: '20px', width: '20px' }} />
+        </div>
       }
+
+      <p className={'card-text ' + textVisible} >{text}</p>
+      {text === mandarin && <p className={'card-text ' + textVisible}>{characters}</p>}
     </div>
 
   )

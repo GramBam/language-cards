@@ -191,6 +191,14 @@ nav p {
   min-width: 10px;
 }
 
+.speechIcon {
+    cursor: pointer;
+    height: 0px;
+    width: 0px;
+    margin-left: 5px
+  }
+
+
 @media screen and (max-width: 1200px) {
   .card-container {
     flex-basis: 40%;
