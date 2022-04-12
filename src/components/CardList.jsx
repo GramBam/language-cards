@@ -8,6 +8,7 @@ function CardList() {
   const categories = ['numbers', 'animals', 'conversation', 'food', 'colors', 'shapes', 'instruments', 'transport', 'pronouns', 'other',]
 
   const [startLanguage, setStartLanguage] = useState('english')
+  const [speechEnabled, setSpeechEnabled] = useState(true)
   const [options, setOptions] = useState({ numbers: false, animals: false, conversation: false, food: false, colors: false, other: true })
 
   const synth = window.speechSynthesis;
@@ -15,14 +16,20 @@ function CardList() {
   const mandarinVoice = synth.getVoices().find(voice => voice.lang === 'zh-TW')
 
   const textToSpeech = (content) => {
-    let utterance = new SpeechSynthesisUtterance(startLanguage === 'mandarin' ? content.english : content.characters)
-    utterance.lang = startLanguage === 'mandarin' ? 'en-CA' : 'zh-TW'
-    utterance.voice = startLanguage === 'mandarin' ? englishVoice : mandarinVoice
-    synth.speak(utterance)
+    if (speechEnabled) {
+      let utterance = new SpeechSynthesisUtterance(startLanguage === 'mandarin' ? content.english : content.characters)
+      utterance.lang = startLanguage === 'mandarin' ? 'en-CA' : 'zh-TW'
+      utterance.voice = startLanguage === 'mandarin' ? englishVoice : mandarinVoice
+      synth.speak(utterance)
+    }
   }
 
   const langChange = (e) => {
     setStartLanguage(e.target.checked ? 'mandarin' : 'english')
+  }
+
+  const toggleTTS = (e) => {
+    setSpeechEnabled(e.target.checked)
   }
 
   const updateCategories = (e) => {
@@ -52,9 +59,15 @@ function CardList() {
   return (
     <div className="main">
       <div className="options">
-        <div className="top-option">
-          <label htmlFor="lang">Start in Mandarin</label>
-          <input type="checkbox" id="lang" onChange={langChange} />
+        <div className="top-options">
+          <div>
+            <label htmlFor="lang">Start in Mandarin</label>
+            <input type="checkbox" id="lang" onChange={langChange} />
+          </div>
+          <div>
+            <label htmlFor="tts">Text-to-Speech</label>
+            <input defaultChecked={true} type="checkbox" id="tts" onChange={toggleTTS} />
+          </div>
         </div>
         <div className="categories">
           {[...Array(categories.length)].map((_, i) => <CategoryPick key={i} title={categories[i]} callback={updateCategories} />)}

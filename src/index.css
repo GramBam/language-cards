@@ -161,6 +161,16 @@ nav p {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  user-select: none;
+}
+
+.top-options {
+  display: flex;
+  justify-content: center;
+}
+
+.top-options div {
+  margin: 0 5px;
 }
 
 .categories {
