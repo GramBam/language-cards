@@ -140,11 +140,9 @@ footer p {
 
 nav {
   text-align: center;
-  background-color: deepskyblue;
   color: #FFF;
   padding: 5px;
   margin-bottom: 10px;
-  ;
 }
 
 nav p {
@@ -180,6 +178,7 @@ nav p {
   padding: 0;
   margin: 15px 50px;
   text-align: center;
+  justify-content: center;
 }
 
 .category {
@@ -212,7 +211,7 @@ nav p {
 
 @media screen and (max-width: 815px) {
   .category {
-    flex-basis: 40%;
+    flex-basis: 50%;
   }
 
   .categories {
