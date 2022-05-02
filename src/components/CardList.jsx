@@ -12,12 +12,14 @@ function CardList() {
   const [options, setOptions] = useState({ numbers: false, animals: false, conversation: false, food: false, colors: false, other: true })
 
   const synth = window.speechSynthesis;
-  console.log(synth.getVoices());
-  const englishVoice = synth.getVoices().find(voice => voice.name.includes('Linda'))
-  const mandarinVoice = synth.getVoices().find(voice => voice.lang === 'zh-TW')
 
   const textToSpeech = (content) => {
     if (speechEnabled) {
+      let voices = synth.getVoices()
+
+      let englishVoice = voices.find(voice => voice.name.includes('Linda'))
+      let mandarinVoice = voices.find(voice => voice.lang === 'zh-CN')
+
       let utterance = new SpeechSynthesisUtterance(startLanguage === 'mandarin' ? content.english : content.characters)
       utterance.lang = startLanguage === 'mandarin' ? 'en-CA' : 'zh-CN'
       utterance.voice = startLanguage === 'mandarin' ? englishVoice : mandarinVoice
