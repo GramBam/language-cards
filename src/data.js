@@ -51,9 +51,13 @@ export const translations =
     { english: 'Grey', mandarin: 'Huī sè', characters: '灰色' },
   ],
   animals: [
+    { english: 'Dog', mandarin: 'Gǒu', characters: '狗' },
     { english: 'Cat', mandarin: 'Māo', characters: '猫' },
     { english: 'Turkey', mandarin: 'Huǒ jī', characters: '火鸡' },
-    { english: 'Dog', mandarin: 'Gǒu', characters: '狗' },
+    { english: 'Monkey', mandarin: 'Hóu', characters: '猴' },
+    { english: 'Gorilla', mandarin: 'Dà xīngxīng', characters: '大猩猩' },
+    { english: 'Chicken', mandarin: 'Jī', characters: '雞' },
+    { english: 'Mouse', mandarin: 'Lǎoshǔ', characters: '老鼠' },
   ],
   food: [
     { english: 'Apples', mandarin: 'Píngguǒ', characters: '苹果' },
@@ -97,5 +101,14 @@ export const translations =
     { english: 'Umbrella', mandarin: 'Yǔsǎn', characters: '雨伞' },
     { english: 'Socks', mandarin: 'Wàzi', characters: '袜子' },
     { english: 'Chair', mandarin: 'Yǐzi', characters: '椅子' },
+    { english: 'Box', mandarin: 'Hézi', characters: '盒子' },
+    { english: 'Scissors', mandarin: 'Jiǎndāo', characters: '剪刀' },
+    { english: 'Books', mandarin: 'Túshū', characters: '圖書' },
+    { english: 'Pencil', mandarin: 'Qiānbǐ', characters: '鉛筆' },
+    { english: 'Clock', mandarin: 'Zhōng', characters: '鐘' },
+    { english: 'Shirt', mandarin: 'Chènshān', characters: '襯衫' },
+    { english: 'Pants', mandarin: 'Kùzi', characters: '褲子' },
+    { english: 'Hat', mandarin: 'Màozi', characters: '帽子' },
+    { english: 'Clothing', mandarin: 'Fúzhuāng', characters: '服裝' },
   ]
 }
